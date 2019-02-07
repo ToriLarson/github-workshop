@@ -1,0 +1,27 @@
+# GitHub Workship Outline
+
+- Intro
+  - About Code For Greensboro.
+- What is Git
+- What is GitHub
+- How are Git and GitHub different
+- Fork repo
+  - What is a repo
+  - What is forking
+- Clone your repo
+  - What is cloning
+- Branches
+  - What is a branch
+  - How does a branch differ from a fork
+  - Feature branching (?)
+- Make a commit
+  - What is a commit
+  - How often should I commit
+- Revert the commit
+- Make another commit
+- Push to your repo
+- Create PR
+- Give additonal resource
+  - Online
+  - `git --help`
+  - `man git`
