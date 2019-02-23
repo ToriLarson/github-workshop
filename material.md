@@ -1,8 +1,11 @@
-# Intro to Git and GitHub 
+# Intro to Git and GitHub
 
-<!-- Should probably ask how many people have used Git and GitHub --> <!-- Explain that this workshop is targeted for beginners and created in the context of Code For GSO's workflow -->
+<!--
+* Should probably ask how many people have used Git and GitHub
+* Explain that this workshop is targeted for beginners and created in the context of Code For GSO's workflow
+* When using Git correctly it gives you the confidence to break stuff -->
 
- ## What is Git
+## What is Git
 
 According to git-scm.com:
 
@@ -10,8 +13,8 @@ According to git-scm.com:
 
 But what does that mean and what problem does Git solve?
 
-Have you ever worked on a paper or a project where maybe after you finished your first draft and got some feedback and before you start working on the next draft you name the file something like `my_project_2018-09-25.txt`<br>
-Then you start on the next draft and you repeat the process and name it like `my_project_2018-10-18.txt`<br>
+Have you ever worked on a paper or a project where maybe after you finished your first draft and got some feedback and before you start working on the next draft you name the file something like `my_project_2018-09-25.txt`
+Then you start on the next draft and you repeat the process and name it like `my_project_2018-10-18.txt`
 And so on and so forth and eventually you end up with a directory that looks like this:
 
 ```bash
@@ -41,24 +44,24 @@ But what does that even mean?
 
 Basically GitHub is a cloud based Git server. It provides a place for developers to `push` and store their Git projects and it makes it easier for multiple people to work on the same project.
 
-This is all still a little confusing and highlevel so lets get started on a project and hopefully that will clarify things. 
+This is all still a little confusing and highlevel so lets get started on a project and hopefully that will clarify things.
 
 <!-- TODO: Get a real URL -->
 
- ## Step 0 - Fork the Repo
+## Step 0 - Fork the Repo
 
 - Go to this url: [SOME_URL]
 - Click the `Fork` button in the upper right corner <!-- TODO: Screenshot? -->
 
 ### What's did I just do?
 
-You forked a repo!<br>
-Forking is Git terminology for copying someone else's project. It provides a place for you to make your own changes and if you want you can later give your changes back to the original repo.<br>
+You forked a repo!  
+Forking is Git terminology for copying someone else's project. It provides a place for you to make your own changes and if you want you can later give your changes back to the original repo.  
 When contributing to projects in a team (and especially in open source) this is the first step
 
 ## Step 1 - Clone your newly forked repo
 
-Mac/Linux - Open terminal<br>
+Mac/Linux - Open terminal  
 Windows - Open Git Bash Type the following
 
 ```bash
@@ -66,32 +69,138 @@ git clone git@github.com:/YOUR_GITHUB_USERNAME/git-workshop-site/
 # Can copy the URL from GitHub page
 cd git-workshop-site
 ls
-``` 
+```
 
 <!-- TODO: How to run site -->
 
- ### What the heck did I just do?
+### What the heck did I just do?
 
-You cloned a repo!<br>
+You cloned a repo!
 Cloning is when you make a copy of a Git project on your local machine.
 
 ### Wait, this is confusing! How is cloning different from forking?!
 
-<!-- TODO: This is not good. Find analogy or better way to explain --> Cloning is different because you are downloading the project to your machine. With forking you are creating your own copy of the project remotly.<br>
+<!-- TODO: This is not good. Find analogy or better way to explain -->
+
+Cloning is different because you are downloading the project to your machine. With forking you are creating your own copy of the project remotly.
+
 If there is ever a project you just want to use and not contribute to, you'd often skip forking it and would just clone it.
 
 ## Branches
 
+Alright, so you have the project on your machine and it's time for you to make some changes to it
+
+Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?  
+Side note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
+
 ```bash
-git checkout -b hello-world
-git branches
+git checkout -b my-contribution
+git branch # Shows you a list of all your local branches. Press `q` to exit
 ```
 
-- Branches
+### You created a new branch but what does that mean?
 
-  - What is a branch
-  - How does a branch differ from a fork
-  - Feature branching (?)
+A branch is just code that _branches_ from the another development branch.  
+A lot people use braching for something called "feature branching". This means you create a new branch for each logical group of changes.  
+For example your working on a website and your boss asks you to add the navbar.  
+You might then create a branch called `add-navbar`. This would allow you to create and push as many changes as you want without affecting the main development branch.
+
+### Branches and Forks and Repos. Oh My!
+
+We've covered several terms so far and they all sound kind of similair. So lets take a moment to recap and clarify things
+
+- Repo (repository) -> This is your project
+- Fork -> Creating a repo by copying another repo
+- Branches -> Groups of logical code changes (Or, groups of commits)
+
+Maybe an analogy would make things clearer:  
+A repo is a tree.  
+When you fork someone's repo, you make an identical copy of their tree and plant it in your front yard.  
+The branches on the tree represent your Git branches. These branches stem from the trunk (typically called the `master` branch) and in Git - unlike a real tree - these branches will rejoin the `master` or another branch
+
+<!-- These branches - Just like real branches - can also be removed or added -->
+
+Is that any clearer?
+
+<!--
+Switching branches Deleting branches Creating a branch without checking out
+Where do I want to talk about this? Before making commits, or after?
+-->
+
+## Commits
+
+First, lets make a change to our `index.html` file. Open the `index.html` file in your favorite editor. Look at the comment around line 54 and replace it with today's date
+
+Great, now from the command line type `git status`. You should see something like the following:
+
+```bash
+On branch my-contribution
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+### Notice the suggestions
+
+Git is very good about providing help with what it thinks you're trying to do.  
+In this case Git is telling us how to stage the file or delete our changes
+
+Let's go remove this change
+
+```bash
+git checkout -- index.html
+git status
+```
+
+You should see something like the following:
+
+```bash
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+(use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+
+## Let's make another change
+
+Around line 78 change the project URL to your github url
+
+Then run
+
+```bash
+git add index.html
+git status
+```
+
+You should see something like this:
+
+```bash
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+```
+
+When you run `git add` you stage your change. this means you are ready to commit the file to the repo. Run the following:
+
+```bash
+git commit -m "Add my repo url"
+```
+
+<!-- TODO: pickup here. Explain conceptually what a commit is then revert the commit -->
+
+<!-- Make another commit (add name to list) -->
+
+<!-- _Talk about what a commit actually is_ -->
 
 - Make a commit
 
@@ -115,3 +224,7 @@ git branches
   - Online
   - `git --help`
   - `man git`
+
+```
+
+```
