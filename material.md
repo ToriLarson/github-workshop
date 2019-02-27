@@ -196,24 +196,97 @@ When you run `git add` you stage your change. this means you are ready to commit
 git commit -m "Add my repo url"
 ```
 
-<!-- TODO: pickup here. Explain conceptually what a commit is then revert the commit -->
+### What did that do?
 
-<!-- Make another commit (add name to list) -->
+You just made your first commit! Commits are how you save your changes to a project.
 
-<!-- _Talk about what a commit actually is_ -->
+Type `git log` to show a list of commits in the current branch. Press `q` to exit.
 
-- Make a commit
+## Let's revert this commit
 
-  - What is a commit
-  - How often should I commit
+So you made your first commit and that's great. But let's pretend your boss or project manager comes to you and says they no longer want your change. How do you go back to a previous commit?
 
-- Revert the commit
+```bash
+git log --pretty=oneline
+# Copy the second commit's hash
+git revert HASH
+# This will launch some form of editor. If you are in Vi or Vim type :wq to exit.
+# If you are in nano type Ctrl+X then type y
+git log
+```
 
-- Make another commit
+## Let's make one more commit, and this time we are going to leave it
 
-- Push to your repo
+```bash
+# Checkout a new branch
+git checkout -b add-github-username
+```
 
-- Create PR
+Go to line 103 or so and add your Github username and a link to your profile with the listed template
+
+```html
+<li>
+  <a href="https://github.com/YOUR_USER_NAME">YOUR_USER_NAME</a>
+</li>
+```
+
+<!-- TODO: at some point checkout master -->
+
+```bash
+git add index.html
+git commit -m "Add GitHub username"
+```
+
+So you added your username and commited the change. Now it's time to share your change with the world (me).
+
+```bash
+git checkout master
+git merge add-github-username
+git push origin master
+```
+
+### What did this do?
+
+You moved back to your master branch and merged you changes with it. Then you pushed your changes to GitHub.
+
+## Go to GitHub
+
+Go to your repository on GitHub and look at the index.html file. You will see your changes.
+
+## Make A Pull Request
+
+<!-- TODO: Screenshots -->
+
+From your repository page, Click the `Pull requests` tab and click the green `New pull request` button
+
+Write a title and body
+
+Submit your Pull Requests
+
+<!-- /TODO: -->
+
+## What next?
+
+So, you just submitted your first Pull Request, that's awesome! A pull request is how you share your changes with others. Now it's up to the project maintainer (in this case me) to reivew, aprove, or reject your pull request.
+
+Once your PR is approved it's changes will automatically get merged and in this case the website will update.
+
+## Congrats You've Finished the Workshop!!!!
+
+## Additional Help
+
+- `man git`
+- `git --help`
+- Attlassian
+- Git SCM
+
+### .gitignore
+
+### Markdown
+
+<!--
+
+- Review PR
 
 - .gitignore
 
@@ -224,7 +297,4 @@ git commit -m "Add my repo url"
   - Online
   - `git --help`
   - `man git`
-
-```
-
-```
+  - https://www.atlassian.com/git/tutorials/undoing-changes -->
