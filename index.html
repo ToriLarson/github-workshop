@@ -176,11 +176,112 @@
 						Note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
 
 
-						Let's make a change!
+						### Let's make a change!
 
 						```bash
-						git checkout -b my-contribution
-						git branch # Shows you a list of all your local branches. Press `q` to exit
+						git branch my-changes
+						git branch #Shows you a list of all your local branches. Press `q` to exit
+						git checkout my-changes
+						```
+
+
+						### "What did I Just do?"
+						
+						You created a branch!
+
+						A branch is just code that _branches_ from the another development branch.  
+						A lot people use branching for something called "feature branching". This means you create a new branch for each logical group of changes.  
+
+						For example your working on a website and your boss asks you to add the navbar.  
+						You might then create a branch called `add-navbar`. This would allow you to create and push as many changes as you want without affecting the main development branch.
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						# Branches and Forks and Repos. Oh My!
+
+						Note:
+							We've covered several terms so far and they all sound kind of similar. So lets take a moment to recap and clarify things
+
+						### Terms
+
+						> 
+						- Repo (repository) -> This is your project
+						- Fork -> Creating a repo by copying another repo
+						- Branches -> Groups of logical code changes (Or, groups of commits)
+
+
+						## An analogy
+
+						A **repo** is like a tree
+
+						**Forking** is making copy of another person's tree
+
+						**Branches** are (kind of) like real life branches
+
+						Note: 
+							Maybe an analogy would make things clearer:  
+							A repo is a tree.  
+							When you fork someone's repo, you make an identical copy of their tree and plant it in your front yard.  
+							The branches on the tree represent your Git branches. These branches stem from the trunk (typically called the `master` branch) and in Git - unlike a real tree - these branches will rejoin the `master` or another branch
+
+
+						## Is that any clearer?
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						## Step 4 - Commits
+
+						First, lets make a change to our `index.html` file.  
+						Open the `index.html` file in your favorite editor.  
+						Look at the comment around line 54 and replace it with today's date
+
+
+						From the command line run:  
+						```sh
+						git status
+						```
+
+
+						Do you see this?  
+						```bash
+						On branch my-changes
+						Your branch is up to date with 'origin/master'.
+
+						Changes not staged for commit:
+						(use "git add <file>..." to update what will be committed)
+						(use "git checkout -- <file>..." to discard changes in working directory)
+
+							modified:   index.html
+
+						no changes added to commit (use "git add" and/or "git commit -a")
+						```
+
+
+						### Notice the suggestions
+
+						Note:  
+						Git is very good about providing help with what it thinks you're trying to do.  
+						In this case Git is telling us how to stage the file or delete our changes
+
+
+						Let's go remove this change
+
+						```bash
+						git checkout -- index.html
+						git status
+						```
+
+						You should see something like the following:
+
+						```bash
+						On branch master
+						Your branch is ahead of 'origin/master' by 1 commit.
+						(use "git push" to publish your local commits)
+
+						nothing to commit, working tree clean
 						```
 					</textarea>
 				</section>
