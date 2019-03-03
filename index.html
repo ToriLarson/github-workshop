@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,9 +24,173 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					# Intro to Git and GitHub
+
+					Note:
+
+					- By show of hands. How many people have used Git and or GitHub before?
+					- This workshop is designed for people who are new to Git and GitHub and is created in the context of Code for Greensboro's workflow
+				</section>
 			</div>
+			<div class="slides">
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						# What is Git?
+
+
+
+						## According to git-scm.com:
+
+						> Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+
+						
+						## But what does that mean and what problem does Git solve?
+
+
+						### Have you ever worked on project that starts out like this?
+
+						```bash
+						project
+						└── my_project_2018-09-25.txt
+						```
+
+						Note: Have you ever worked on a paper or a project where maybe after you finished your first draft and got some feedback and before you start working on the next draft you name the file something like `my_project_2018-09-25.txt`
+						Then you start on the next draft and you repeat the process and name it like `my_project_2018-10-18.txt`
+						And so on and so forth and eventually you end up with a directory that looks like this:
+
+
+						### And after a few interations your project looks like this?
+
+						```bash
+						project
+						├── my_project_2018-09-25.txt
+						├── my_project_2018-10-18.txt
+						├── my_project_final.txt
+						├── my_project_final_final.txt
+						└── my_project_final_final_THIS_ONE.txt
+						```
+
+						Note: Now imagine you and a team were working on this project and you were saving files like this and each person was making their own changes and sharing the files back and forth.
+
+
+						## Git provides a way to track incremental changes and share those changes with others
+
+						And, when using Git jhcorrectly it gives you the confidence to break stuff
+
+						Note: 
+							In our example what would happen if two people made changes to the same file at the same time?  
+							They would have to manually figure out what to keep and what to get rid of. Git can do this automatically and when it can't it provides a convient interface for doing it yourself.
+					</textarea>
+					</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						# What is GitHub?
+						and how is it different from Git?
+
+
+						## According to GitHub's website:
+
+						> GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside 31 million developers.
+
+
+						# What does that even mean?
+
+
+						Basically GitHub is a cloud based Git server. It provides a place for developers to `push` and store their Git projects and it makes it easier for multiple people to work on the same project.
+
+
+						## Confused?
+						Let's get started!
+
+						Note: This is all still a little confusing and highlevel so lets get started on a project and hopefully that will clarify things.
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						## Step 0 - Fork the Repo
+
+						- Go to this url: https://github.com/codeforgso/github-workshop-site
+						- Click the `Fork` button in the upper right corner <!-- TODO: Screenshot? -->
+
+
+						### "What did I just do?"
+
+						#### You forked a repo!  <!-- .element: class="fragment" data-fragment-index="1" -->
+
+
+						Forking is Git terminology for copying someone else's project.  
+						It provides a place for you to make your own changes and if you want you can later give your changes back to the original repo.  
+
+						When contributing to projects in a team (and especially in open source) this is the first step
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						## Step 1 - Clone your newly forked repo
+
+						Mac/Linux - Open terminal  
+						Windows - Open Git Bash Type the following
+
+						```bash
+						git clone git@github.com:/YOUR_GITHUB_USERNAME/github-workshop-site/
+						# You can copy the URL from GitHub page
+						cd github-workshop-site # Change directory to project
+						ls -a # List all files in the directory
+						```
+
+						Note: Throughout this entire tutorial we will be using the Terminal on Mac/Linux or Git Bash on Windows
+
+
+						### "What did I just do?"
+
+						#### You cloned a repo!  <!-- .element: class="fragment" data-fragment-index="2" -->
+
+
+						Cloning is when you download a copy of a Git project to your computer
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						# "Wait! this is confusing! How is cloning different from forking?!"
+
+
+						Cloning is different because you are downloading the project to your machine. With forking you are creating your own copy of the project remotely.
+
+
+						If there is ever a project you just want to use and not contribute to, you'd often skip forking it and would just clone it.
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
+						## Step 3 - Branches
+
+
+						## So I downloaded the project. Now what?
+
+						Note:
+							Alright, so you have the project on your machine and it's time for you to make some changes to it
+						Note: 
+							Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?  
+						Note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
+
+
+						Let's make a change!
+
+						```bash
+						git checkout -b my-contribution
+						git branch # Shows you a list of all your local branches. Press `q` to exit
+						```
+					</textarea>
+				</section>
+			</div>
+		</div>
+	</textarea>
+
+		</div>
+</section>
+</section>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

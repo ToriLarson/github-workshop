@@ -1,9 +1,6 @@
 # Intro to Git and GitHub
 
-<!--
-* Should probably ask how many people have used Git and GitHub
-* Explain that this workshop is targeted for beginners and created in the context of Code For GSO's workflow
-* When using Git correctly it gives you the confidence to break stuff -->
+<!--  When using Git correctly it gives you the confidence to break stuff -->
 
 ## What is Git
 
