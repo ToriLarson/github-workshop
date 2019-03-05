@@ -193,11 +193,13 @@ When you run `git add` you stage your change. this means you are ready to commit
 git commit -m "Add my repo url"
 ```
 
+
 ### What did that do?
 
 You just made your first commit! Commits are how you save your changes to a project.
 
 Type `git log` to show a list of commits in the current branch. Press `q` to exit.
+
 
 ## Let's revert this commit
 
@@ -234,7 +236,7 @@ git add index.html
 git commit -m "Add GitHub username"
 ```
 
-So you added your username and commited the change. Now it's time to share your change with the world (me).
+So you added your username and committed the change. Now it's time to share your change with the world (me).
 
 ```bash
 git checkout master
