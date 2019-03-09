@@ -79,7 +79,7 @@
 						And so on and so forth and eventually you end up with a directory that looks like this:
 
 
-						### And after a few interations your project looks like this?
+						### And after a few iterations your project looks like this?
 
 						```bash
 						project
@@ -160,7 +160,11 @@
 						ls -a # List all files in the directory
 						```
 
-						Note: Throughout this entire tutorial we will be using the Terminal on Mac/Linux or Git Bash on Windows
+						<!--  TODO: format this note -->
+						Note:  
+						These are bash/terminal commands.
+						Type these into Git bash or your Terminal
+						The hashes/hashtags/octothorpe indicate comments. You don't need to type these.
 
 
 						### "What did I just do?"
@@ -175,17 +179,19 @@
 					<textarea data-template >
 						# "Wait! this is confusing! How is cloning different from forking?!"
 
+						- Cloning: Downloading a project
+						- Forking: Creating your own copy of a project remotely
 
-						Cloning is different because you are downloading the project to your machine. With forking you are creating your own copy of the project remotely.
-
-
-						If there is ever a project you just want to use and not contribute to, you'd often skip forking it and would just clone it.
+						Note:
+							Cloning is different because you are downloading the project to your machine.  
+							With forking you are creating your own copy of the project remotely.
+							If there is ever a project you just want to use and not contribute to, you'd often skip forking it and would just clone it.
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
-						## Step 3 - Branches
+						## Step 2 - Branches
 
 
 						## So I downloaded the project. Now what?
@@ -199,9 +205,9 @@
 						### Let's make a change!
 
 						```bash
-						git branch my-changes
-						git branch #Shows you a list of all your local branches. Press `q` to exit
-						git checkout my-changes
+						git branch my-changes # Creates a branch called my-changes
+						git branch # Shows you a list of all your local branches. Press `q` to exit
+						git checkout my-changes # Switches from your current branch to the my-changes branch
 						```
 
 
@@ -209,9 +215,9 @@
 						
 						You created a branch!
 
+						Note:  
 						A branch is just code that _branches_ from the another development branch.  
 						A lot people use branching for something called "feature branching". This means you create a new branch for each logical group of changes.  
-
 						For example your working on a website and your boss asks you to add the navbar.  
 						You might then create a branch called `add-navbar`. This would allow you to create and push as many changes as you want without affecting the main development branch.
 
@@ -248,13 +254,11 @@
 
 
 						## Is that any clearer?
-
-
 					</textarea>
 				</section>
-				<section data-markdown data-separator-vertical="^\n\n">
+				<!-- <section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
-						## Step 4 - Commits
+						## Step 3 - Commits
 
 						First, lets make a change to our `index.html` file.  
 						Open the `index.html` file in your favorite editor.  
@@ -306,10 +310,17 @@
 						nothing to commit, working tree clean
 						```
 					</textarea>
-				</section>
+				</section> -->
 				<section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
 						## Let's make another change
+
+						- Let's make a change 
+						- Open the `index.html` file in your favorite editor.
+
+						Note:
+						 Using VS Code type `code .`
+						 Using Windows Notepad.exe type `notepad.exe` 
 
 						Around line 78 change the project URL to your GitHub url:
 
@@ -347,7 +358,8 @@
 
 						## Let's revert this commit
 
-						So you made your first commit and that's great. But let's pretend your boss or project manager comes to you and says they no longer want your change. How do you go back to a previous commit?
+						Note: So you made your first commit and that's great. But let's pretend your boss or project manager comes to you and says they no longer want your change. How do you go back to a previous commit?  
+
 
 						```bash
 						git log --pretty=oneline
@@ -419,7 +431,7 @@
 							I now have to approve your pull request
 					</textarea>
 				</section>
-				<section>
+				<section data-markdown data-separtor-vertical="^\n\n">
 					<textarea data-template >
 						## Additional Resources
 
@@ -449,6 +461,7 @@
 				slideNumber: true
 			})
 			Reveal.initialize({
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
