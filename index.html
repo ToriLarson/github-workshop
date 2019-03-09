@@ -36,8 +36,27 @@
 			<div class="slides">
 				<section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
+						# About This Workshop
+
+						
+						## Goal
+						- Using Git to track changes in a project
+						- Using Git to undo changes in a project
+						- Using GitHub to collaborate with others
+
+						<!-- TODO: Objectives -->
+						<!-- TODO: Application -->
+
+					</textarea>
+					</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
 						# What is Git?
 
+
+						## According to XKCD:
+
+						![](./xkcd-git.png)
 
 
 						## According to git-scm.com:
@@ -171,13 +190,10 @@
 
 						## So I downloaded the project. Now what?
 
-						<!-- TODO: pickup here. Display as note -->
-						Note:
-
+						Note:  
 						Alright, so you have the project on your machine and it's time for you to make some changes to it
-						Note:
 					    Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?  
-						Note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
+						there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
 
 
 						### Let's make a change!
@@ -429,6 +445,9 @@
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.configure({
+				slideNumber: true
+			})
 			Reveal.initialize({
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
