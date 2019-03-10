@@ -137,34 +137,33 @@
 
 						#### You forked a repo!  <!-- .element: class="fragment" data-fragment-index="1" -->
 
+						#### Forking: Copying another person's project remotely. <!-- .element: class="fragment" data-fragment-index="2" -->
 
+						Note:   
 						Forking is Git terminology for copying another person's project.  
 						It provides a place for you to make your own changes and if you want you can later give your changes back to the original repo.  
-
 						When contributing to projects in a team (and especially in open source) this is the first step
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="^\n\n">
-					<textarea data-template >
+					<textarea data-template>
 						## Step 1 - Clone your newly forked repo
 
 						Mac/Linux - Open terminal  
 						Windows - Open Git Bash Type the following
 
-						```bash
+						```sh
 						git clone git@github.com:/YOUR_GITHUB_USERNAME/github-workshop-site/
 						# You can copy the URL from GitHub page
-						cd github-workshop						Alright, so you have the project on your machine and it's time for you to make some changes to it
-						Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?  
-						Note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.-site # Change directory to project
+						cd github-workshop
 						ls -a # List all files in the directory
 						```
-
-						<!--  TODO: format this note -->
-						Note:  
-						These are bash/terminal commands.
-						Type these into Git bash or your Terminal
-						The hashes/hashtags/octothorpe indicate comments. You don't need to type these.
+						
+						<!-- Note:   -->
+						<!-- These are bash/terminal commands. Type these into Git bash or your Terminal. The hashes/hashtags/octothorpe indicate comments. You don't need to type these. -->
+						<!-- Alright, so you have the project on your machine and it's time for you to make some changes to it -->
+						<!-- Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?   -->
+						<!-- Note: there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.-site # Change directory to project -->
 
 
 						### "What did I just do?"
@@ -313,7 +312,7 @@
 				</section> -->
 				<section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
-						## Let's make another change
+						## Let's make change
 
 						- Let's make a change 
 						- Open the `index.html` file in your favorite editor.
@@ -362,13 +361,15 @@
 
 
 						```bash
-						git log --pretty=oneline
-						# Copy the second commit's hash
-						git revert HASH
-						# This will launch some form of editor. If you are in Vi or Vim type :wq to exit.
+						git revert HEAD --no-edit # `no-edit` tells git that you want the commit message to stay the same
 						# If you are in nano type Ctrl+X then type y
 						git log
 						```
+
+						Note:  
+
+						You should see something that says "Revert" then your commit message
+						This will undo your most recent change. If you need to revert to something several commits back checkout the atlassian resource at the end of the presetation
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="^\n\n">
