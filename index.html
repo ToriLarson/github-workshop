@@ -178,6 +178,7 @@
 					<textarea data-template >
 						# "Wait! this is confusing! How is cloning different from forking?!"
 
+
 						- Cloning: Downloading a project
 						- Forking: Creating your own copy of a project remotely
 
@@ -190,6 +191,13 @@
 				</section>
 				<section data-markdown data-separator-vertical="^\n\n">
 					<textarea data-template >
+						## Open the index.html file in your browser
+
+						To find where your project is type `pwd` in your terminal
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
 						## Step 2 - Branches
 
 
@@ -198,7 +206,7 @@
 						Note:  
 						Alright, so you have the project on your machine and it's time for you to make some changes to it
 					    Let's assume your team wants you to _change something on the website_. Using Git, how do we go about this?  
-						there are many ways to do this with Git, but we are making the assumption that your are working on a team. And for that assumption, this is a common workflow you would see.
+						there are many ways to do this with Git, but we are making the assumption that you're are working on a team. And for that assumption, this is a common workflow you would see.
 
 
 						### Let's make a change!
@@ -321,6 +329,7 @@
 						 Using VS Code type `code .`
 						 Using Windows Notepad.exe type `notepad.exe` 
 
+
 						Around line 78 change the project URL to your GitHub url:
 
 						```bash
@@ -354,7 +363,10 @@
 
 						Type `git log` to show a list of commits in the current branch. Press `q` to exit.
 
-
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="^\n\n">
+					<textarea data-template >
 						## Let's revert this commit
 
 						Note: So you made your first commit and that's great. But let's pretend your boss or project manager comes to you and says they no longer want your change. How do you go back to a previous commit?  
@@ -377,11 +389,19 @@
 						## Let's make one more commit, and this time we are going to leave it
 
 
+						### Checkout master
+						```bash
+						git checkout master
+						```
+
+
 						### Run 
 						```bash
 						# Checkout a new branch
 						git checkout -b add-github-username
 						```
+
+						Note: `checkout -b` is just a shorter way of creating a new branch and checking it out
 
 
 						Go to line 103 or so and add your Github username and a link to your profile with the listed template
@@ -438,8 +458,8 @@
 
 						- `man git`
 						- `git --help`
-						- Attlassian
-						- Git SCM
+						- Attlassian - atlassian.com/git/tutorials
+						- Git SCM - git-scm.com/docs/gittutorial
 					</textarea>
 				</section>
 			</div>
