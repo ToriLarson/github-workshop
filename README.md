@@ -1,6 +1,6 @@
 # GitHub Workshop Presentation
 
-# Aloha
+##### Aloha
 
 This workshop is deigned to take new Git users through the process of cloing a repo, making commits, reverting commits, pushing changes, and creating pull requests
 
